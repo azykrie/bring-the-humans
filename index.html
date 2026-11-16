@@ -32,6 +32,13 @@
 'use strict';
 const invite='https://make.fun/r/w54ezzed';
 const menu=document.querySelector('#menu');
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){
+    menu.setAttribute('aria-expanded','false');
+    document.querySelector('#nav').classList.remove('open');
+    menu.focus();
+  }
+});
 menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));document.querySelector('#nav').classList.toggle('open',open)});
 document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');document.querySelector('#nav').classList.remove('open')}));
 let toastTimer;
