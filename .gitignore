@@ -1,0 +1,9 @@
+.browser-preview/
+.agents/
+.codex/
+.env
+.env.*
+!.env.example
+makefun-keypair.json
+transcripts*.tar.gz
+node_modules/
